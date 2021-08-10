@@ -1,0 +1,502 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+# - rule: welcome user
+#   conversation_start: true  # this rule only applies at the beginning of a conversation
+#   steps:
+#   - intent: greet
+#   - action: utter_welcome
+  
+# - rule: Activate form
+#   steps: 
+#   # - intent: tell_name
+#   # - intent: computer
+#   # # - action: utter_computer
+#   - intent: sent_sms
+#   - action: user_details_form
+#   - active_loop: user_details_form
+
+# - rule: Submit form
+#   condition:
+#   #condition that form is active
+#   - active_loop: user_details_form
+#   steps:
+#   #form is deactivated
+#   - action: user_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   #the action we want to run when the form is submitted
+#   - action: action_submit1
+
+
+
+# - rule: dell details
+#   steps: 
+#   # - intent: tell_name
+#   - intent: dell
+#   - action: utter_dell
+#   # - action: action_carousels
+#   - action: user_details_form
+#   - active_loop: user_details_form
+
+# - rule: dell 
+#   condition:
+#   #condition that form is active
+#   - active_loop: user_details_form
+#   steps:
+#   #form is deactivated
+#   - action: user_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   #the action we want to run when the form is submitted
+#   - action: action_submit
+
+
+- rule: paypal details 
+  steps: 
+  # - intent: tell_name
+  - intent: paypal
+  - action: utter_paypal
+  # - action: action_carousels
+  - action: user_details_form
+  - active_loop: user_details_form
+
+
+- rule: paypal
+  condition:
+  #condition that form is active
+  - active_loop: user_details_form
+  steps:
+  #form is deactivated
+  - action: user_details_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  #the action we want to run when the form is submitted
+  - action: action_submit
+
+
+
+# - rule: applepay details 
+#   steps: 
+#   # - intent: tell_name
+#   - intent: applepay
+#   - action: utter_applepay
+#   # - action: action_carousels
+#   - action: user_details_form
+#   - active_loop: user_details_form
+
+# - rule: applepay
+#   condition:
+#   #condition that form is active
+#   - active_loop: user_details_form
+#   steps:
+#   #form is deactivated
+#   - action: user_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   #the action we want to run when the form is submitted
+#   - action: action_submit1
+
+
+- rule: applepay details 
+  steps: 
+  # - intent: tell_name
+  - intent: applepay
+  - action: utter_applepay
+  - action: sms_details_form
+  - active_loop: sms_details_form
+
+- rule: applepay
+  condition:
+  #condition that form is active
+  - active_loop: sms_details_form
+  steps:
+  #form is deactivated
+  - action: sms_details_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  #the action we want to run when the form is submitted
+  - action: action_submit1
+
+
+# - rule: googlepay details 
+#   steps: 
+#   # - intent: tell_name
+#   - intent: googlepay
+#   - action: utter_googlepay
+#   # - action: action_carousels
+#   - action: user_details_form
+#   - active_loop: user_details_form
+
+# - rule: googlepay
+#   condition:
+#   #condition that form is active
+#   - active_loop: user_details_form
+#   steps:
+#   #form is deactivated
+#   - action: user_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   #the action we want to run when the form is submitted
+#   - action: action_submit
+
+ 
+# - rule: asus details
+#   steps: 
+#   # - intent: tell_name
+#   - intent: asus
+#   - action: utter_asus
+#   # - action: action_carousels
+#   - action: user_details_form
+#   - active_loop: user_details_form
+
+# - rule: asus 
+#   condition:
+#   #condition that form is active
+#   - active_loop: user_details_form
+#   steps:
+#   #form is deactivated
+#   - action: user_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   #the action we want to run when the form is submitted
+#   - action: action_submit
+
+
+
+
+- rule: lenovo details
+  steps: 
+  # - intent: tell_name
+  - intent: lenovo
+  - action: utter_lenovo
+  # - action: action_carousels
+  - action: user_details_form
+  - active_loop: user_details_form
+
+- rule: lenovo
+  condition:
+  #condition that form is active
+  - active_loop: user_details_form
+  steps:
+  #form is deactivated
+  - action: user_details_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  #the action we want to run when the form is submitted
+  - action: action_submit
+  
+
+# - rule: samsung mobile details
+#   steps: 
+#   # - intent: tell_name
+#   - intent: mobile
+#   - action: utter_mobile
+#   # - action: action_carousels
+#   - action: user_details_form
+#   - active_loop: user_details_form
+
+# - rule: samsung mobile 
+#   condition:
+#   #condition that form is active
+#   - active_loop: user_details_form
+#   steps:
+#   #form is deactivated
+#   - action: user_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   #the action we want to run when the form is submitted
+#   - action: action_submit
+
+
+
+
+# - rule: say for tv
+#   steps: 
+#   # - intent: tell_name
+#   - intent: Television
+#   - action: utter_televison
+#   - action: user_details_form
+#   - active_loop: user_details_form
+
+# - rule: sub for tv
+#   condition:
+#   #condition that form is active
+#   - active_loop: user_details_form
+#   steps:
+#   #form is deactivated
+#   - action: user_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   #the action we want to run when the form is submitted
+#   - action: action_submit
+
+
+
+# - rule: say for sweater
+#   steps: 
+#   # - intent: tell_name
+#   - intent: sweater
+#   - action: utter_sweater
+#   - action: user_details_form
+#   - active_loop: user_details_form
+
+# - rule: sub for sweater
+#   condition:
+#   #condition that form is active
+#   - active_loop: user_details_form
+#   steps:
+#   #form is deactivated
+#   - action: user_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   #the action we want to run when the form is submitted
+#   - action: action_submit
+
+
+
+# - rule: say for dress
+#   steps: 
+#   # - intent: tell_name
+#   - intent: dress
+#   - action: utter_dress
+#   - action: user_details_form
+#   - active_loop: user_details_form
+
+
+# - rule: sub for dress
+#   condition:
+#   #condition that form is active
+#   - active_loop: user_details_form
+#   steps:
+#   #form is deactivated
+#   - action: user_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   #the action we want to run when the form is submitted
+#   - action: action_submit
+
+
+
+# - rule: say for hoodies
+#   steps: 
+#   # - intent: tell_name
+#   - intent: hoodies
+#   - action: utter_hoodies
+#   - action: user_details_form
+#   - active_loop: user_details_form
+
+
+# - rule: sub for hoodies
+#   condition:
+#   #condition that form is active
+#   - active_loop: user_details_form
+#   steps:
+#   #form is deactivated
+#   - action: user_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   #the action we want to run when the form is submitted
+#   - action: action_submit
+
+
+
+# - rule: say for shirt
+#   steps: 
+#   # - intent: tell_name
+#   - intent: shirt
+#   - action: utter_shirt
+#   - action: user_details_form
+#   - active_loop: user_details_form
+
+
+# - rule: sub for shirt
+#   condition:
+#   #condition that form is active
+#   - active_loop: user_details_form
+#   steps:
+#   #form is deactivated
+#   - action: user_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   #the action we want to run when the form is submitted
+#   - action: action_submit
+
+
+
+# - rule: say for T-shirt
+#   steps: 
+#   # - intent: tell_name
+#   - intent: T-shirt
+#   - action: utter_t_shirt
+#   - action: user_details_form
+#   - active_loop: user_details_form
+
+
+# - rule: sub for T-shirt
+#   condition:
+#   #condition that form is active
+#   - active_loop: user_details_form
+#   steps:
+#   #form is deactivated
+#   - action: user_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   #the action we want to run when the form is submitted
+#   - action: action_submit
+
+
+
+# - rule: say for Jeans
+#   steps: 
+#   # - intent: tell_name
+#   - intent: Jeans
+#   - action: utter_jeans
+#   - action: user_details_form
+#   - active_loop: user_details_form
+
+
+# - rule: sub for Jeans
+#   condition:
+#   #condition that form is active
+#   - active_loop: user_details_form
+#   steps:
+#   #form is deactivated
+#   - action: user_details_form
+#   - active_loop: null
+#   - slot_was_set:
+#     - requested_slot: null
+#   #the action we want to run when the form is submitted
+#   - action: action_submit
+
+
+- rule: say for carousels
+  steps:
+  - intent: hp
+  - action: action_carousels
+
+- rule: say for carousels1
+  steps:
+  - intent: dell
+  - action: action_carousels1
+
+- rule: say for carousels2
+  steps:
+  - intent: asus
+  - action: action_carousels2
+
+
+- rule: say for carousels3
+  steps:
+  - intent: sweater
+  - action: action_carousels3
+
+
+
+- rule: say for carousels4
+  steps:
+  - intent: dress
+  - action: action_carousels4
+
+
+
+- rule: say for carousels5
+  steps:
+  - intent: hoodies
+  - action: action_carousels5
+
+
+
+
+- rule: say for carousels6
+  steps:
+  - intent: shirt
+  - action: action_carousels6
+
+
+
+- rule: say for carousels7
+  steps:
+  - intent: T-shirt
+  - action: action_carousels7
+
+
+
+- rule: say for carousels8
+  steps:
+  - intent: Jeans
+  - action: action_carousels8
+
+
+- rule: say for carousels9
+  steps:
+  - intent: samsung 
+  - action: action_carousels9
+
+- rule: say for carousels10
+  steps:
+  - intent: iphone
+  - action: action_carousels10
+
+- rule: say for carousels12
+  steps:
+  - intent: huawai
+  - action: action_carousels12
+
+- rule: say for carousels13
+  steps:
+  - intent: sony
+  - action: action_carousels13
+
+
+- rule: say for carousels14
+  steps:
+  - intent: lg
+  - action: action_carousels14
+
+- rule: say for carousels15
+  steps:
+  - intent: samsungTv
+  - action: action_carousels15
+ 
+- rule: say for buy
+  steps:
+  - intent: buy
+  - action: utter_buy
+
+- rule: say for deny
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+- rule: say for payment
+  steps:
+  - intent: payment
+  - action: utter_payment_methods
+  

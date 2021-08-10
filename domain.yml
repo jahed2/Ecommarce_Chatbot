@@ -1,0 +1,359 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - buy
+  - payment
+  - paypal
+  - applepay
+  - googlepay
+  - sent_sms
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - what_do_you_have
+  - Clothing
+  - Electronics
+  # - mens
+  # - womens
+  - computer
+  - hp
+  - dell
+  - asus
+  - lenovo
+  - mobile
+  - huawai
+  - samsung
+  - iphone
+  - Television
+  - sony
+  - lg
+  - samsungTv
+  - sweater
+  - dress
+  - hoodies
+  - shirt
+  - T-shirt
+  - Jeans
+  - tell_name
+  - my_name:
+      use_entities:
+        - name
+  - mobile_number:
+      use_entities:
+        - number 
+  - address:
+      use_entities:
+        - address
+  - email:
+      use_entities:
+        - email
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_botgreet:
+  - text: "Welcome to our shop, how can i help you sir? "
+  utter_multiple:
+  - text: "We have multiple items"
+  utter_electronics_or_clothing:
+  - text: "What would you prefered clothing or electronics"
+    buttons:
+      - title: "Electronics"
+        payload: "/Electronics"
+      - title: "Clothing"
+        payload: "/Clothing"
+  utter_electronics:
+  - text: "We have different type of electronics product like Mobile,Television,Laptop,Camera"
+    # image: "https://i.gadgets360cdn.com/products/laptops/large/1525206065_635_inspiron-5559.jpg"
+    buttons:
+      - title: "Computer"
+        payload: "/computer"
+      - title: "Mobile"
+        payload: "/mobile"
+      - title: "Television"
+        payload: "/Television"
+  utter_clothing:
+  - text: "We have different type of clothing product like sweater,dress,hoodies,T-shirt,flip-pops,shorts,Skirt,jeans"
+    buttons:
+      - title: "Sweater"
+        payload: "/sweater"
+      - title: "Dress"
+        payload: "/dress"
+      - title: "Hoodies"
+        payload: "/hoodies"
+      - title: "Shirt"
+        payload: "/shirt"
+      - title: "T-shirt"
+        payload: "/T-shirt"
+      - title: "Jeans"
+        payload: "/Jeans"
+
+  utter_computer:
+  - text: "We have different brand of computers, what would you prefered?"
+    buttons:
+      - title: "Hp"
+        payload: "/hp"
+      - title: "Dell"
+        payload: "/dell"
+      - title: "Asus"
+        payload: "/asus"
+      - title: "Lenovo"
+        payload: "/lenovo"
+
+  utter_mobile:
+  - text: "We have different brand of mobile phones, what would you prefered?"
+    buttons:
+      - title: "Samsung" 
+        payload: "/samsung"
+      - title: "APPLE"
+        payload: "/iphone"
+      - title: "HUAWEI"
+        payload: "/huawai"
+  # utter_samsung:
+  # - text: "please give me your name,mobile_number,email,address? i will sent product details""
+  utter_televison:
+  - text: "We have different brand of Television, what would you prefered?"
+    buttons:
+      - title: "Sony"
+        paylaod: "/sony"
+      - title: "LG"
+        payload: "/lg"
+      # - title: "Samsung TVs"
+      #   payload: "/samsungTv"
+  utter_sweater:
+  - text: "Please give me your name,mobile_number,email,address? i will sent product details"
+    # buttons:
+    #   - title: "Mens"
+    #     payload: "/mens"
+    #   - title: "Womens"
+    #     payload: "/womens"
+  utter_dress:
+  - text: "Please give me your name,mobile_number,email,address? i will sent product details"
+    # buttons:
+    #   - title: "Mens"
+    #     payload: "/mens"
+    #   - title: "Womens"
+    #     payload: "/womens"
+  utter_hoodies:
+  - text: "Please give me your name,mobile_number,email,address? i will sent product details"
+    # buttons:
+    #   - title: "Mens"
+    #     payload: "/mens"
+    #   - title: "Womens"
+    #     payload: "/womens"
+  utter_shirt:
+  - text: "Please give me your name,mobile_number,email,address? i will sent product details"
+    # buttons:
+    #   - title: "Mens"
+    #     payload: "/mens"
+    #   - title: "Womens"
+    #     payload: "/womens"
+  utter_t_shirt:
+  - text: "Please give me your name,mobile_number,email,address? i will sent product details"
+    # buttons:
+    #   - title: "Mens"
+    #     payload: "/mens"
+    #   - title: "Womens"
+    #     payload: "/womens"
+  utter_jeans:
+  - text: "Please give me your name,mobile_number,email,address? i will sent product details"
+    # buttons:
+    #   - title: "Mens"
+    #     payload: "/mens"
+    #   - title: "Womens"
+    #     payload: "/womens"
+  # utter_mens:
+  # - text: "please give me your name,mobile_number,email,address? i will sent product details"
+  # utter_womens:
+  # - text: "please give me your name,mobile_number,email,address? i will sent product details"
+  utter_hp:
+  - text: "Please give me your name,mobile_number,email,address? i will sent product details"
+  utter_dell:
+  - text: "Please give me your name,mobile_number,email,address? i will sent product details"
+  utter_lenovo:
+  - text: "Please give me your name,mobile_number,email,address? i will sent product details"
+  utter_asus:
+  - text: "Please give me your name,mobile_number,email,address? i will sent product details"
+  # utter_name:
+  # - text: "my name is noman siddique"
+  utter_ask_name:
+  - text: "What is your name?"
+  utter_ask_number:
+  - text: "What is your mobile number?"
+  utter_ask_address:
+  - text: "What is your address"
+  utter_ask_email:
+  - text: "What is your email id?"
+
+  # utter_welcome:
+  # - text: Hi there! What can I help you with today?
+
+  utter_thanks:
+  - text: "We will get your order shortly."
+  utter_details_thanks:
+  - text: "Thanks for providing the given details \nName: {Name},\nMobile Number:{Mobile_number},\nAddress: {Address},\nemail: {email}.  we will sent product details as early as possible"
+  utter_deny:
+  - text: "Thank you for interesting, please check here for more details, https://www.startech.com.bd/laptop-notebook?filter=1059 "
+  utter_buy: 
+  - text: "For know about product details please visit our website"
+    buttons:
+      - title: "Order"
+        payload: "/payment"
+      - title: "Deny"
+        payload: "/deny"
+      
+
+  utter_payment_methods:
+  - text: "We accept all major credit cards, Apple Pay, Google Pay, and PayPal. "
+    buttons:
+     - title: "Paypal"
+       payload: "/paypal"
+     - title: "Applepay"
+       payload: "/applepay"
+    #  - title: "googlepay"
+    #    paylaod: "/googlepay"
+  #   buttons:
+  #     - title: "paypal"
+  #       payload: "/paypal"
+  #     - title: "applepay"
+  #       payload: "/applepay"
+  #     - title: "googlepay"
+  #       paylaod: "/googlepay"
+  utter_paypal:
+  - text: "Please give me your name,mobile_number,email,address?we will contact with you as soon as possible"
+  utter_applepay:
+  - text: "Please give me your name,mobile_number,email,address?we will contact with you as soon as possible"
+  # utter_googlepay:
+  # - text: "please give me your name,mobile_number,email,address?we will contact with you as soon as possible"
+  utter_ask_mobile_number:
+  - text: "Please provide the mobile number whom you want to message?"
+  utter_ask_message:
+  - text: "Please provide the message you want to send?"
+actions:
+  - utter_greet
+  # - utter_welcome
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_happy
+  - utter_goodbye
+  - utter_iamabot
+  - utter_botgreet
+  - utter_multiple
+  - utter_electronics_or_clothing
+  - utter_electronics
+  - utter_clothing
+  # - utter_electronics_product
+  - utter_computer
+  - utter_lenovo
+  - utter_dell
+  - utter_asus
+  - utter_hp
+  - utter_mobile
+  - utter_televison
+  - utter_sweater
+  - utter_dress
+  - utter_hoodies
+  - utter_shirt
+  - utter_t_shirt
+  - utter_jeans
+  # - utter_name
+  - utter_ask_name
+  - utter_ask_number
+  - utter_ask_address
+  - utter_thanks
+  - utter_details_thanks
+  - action_submit
+  - utter_ask_email
+  - utter_ask_mobile_number
+  - utter_ask_message
+  - action_submit1
+  - action_carousels
+  - action_carousels1
+  - action_carousels2
+  - action_carousels3
+  - action_carousels4
+  - action_carousels5
+  - action_carousels6
+  - action_carousels7
+  - action_carousels8
+  # - action_carousels11
+  - action_carousels10
+  - action_carousels9
+  - action_carousels12
+  - action_carousels14
+  - action_carousels13
+  - action_carousels15
+  - utter_deny
+  - utter_buy
+  - utter_payment_methods
+  # - utter_paypal
+  # - utter_applepay
+  # - utter_googlepay
+  
+  
+entities:
+  - name
+  - number 
+  - address
+  - email
+slots: 
+  name:
+    type: text
+  number:
+    type: text
+  address:
+    type: text
+  email:
+    type: text
+  mobile_number: 
+    type: text
+  message: 
+    type: text
+forms:
+  user_details_form:
+    name:
+      - type: from_entity
+        entity: name
+    number:
+      - type: from_entity
+        entity: number 
+    address:
+      - type: from_entity
+        entity: address
+    email:
+      - type: from_entity
+        entity: email
+
+  sms_details_form:
+    mobile_number:
+      - type: from_text
+    message:
+      - type: from_text
+
+    
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
